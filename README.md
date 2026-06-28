@@ -1,56 +1,48 @@
-# Welcome to your Expo app 👋
+# ₦ KudiKeeper 
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A premium, glassmorphism-themed personal finance and budgeting application designed for students, entrepreneurs, and salary earners to master their financial discipline.
 
-## Get started
+## ✨ Features
 
-1. Install dependencies
+* **Bank-Grade Security:** 4-digit PIN lock session that secures financial records, built directly into the app state.
+* **Smart Budget Planner:** Set monthly limits across categories (Food, Transport, etc.). The app dynamically tracks spending and triggers automated alerts when you exceed 90% of your budget.
+* **Interactive Savings Goals:** Track long-term financial targets with real-time progress bars and a "Quick Deposit" feature.
+* **On-Device Data Persistence:** Powered by Zustand's persist middleware, ensuring zero data loss between sessions without requiring an external database.
+* **Export to Excel:** One-click generation of professional CSV financial reports directly to the user's device.
+* **Dynamic Theming:** Seamless toggling between a "Dark Tech" aesthetic and a premium "Emerald/Teal" light mode without breaking the glassmorphism UI.
+* **In-App Notification Center:** Smart alerts and an onboarding tutorial seamlessly integrated into the navigation bar.
 
+## 🛠 Tech Stack
+
+* **Framework:** React Native / Expo
+* **Styling:** Tailwind CSS (via NativeWind) for Glassmorphism UI
+* **State Management:** Zustand (with Persist Middleware)
+* **Icons:** Feather Icons (@expo/vector-icons)
+
+## 🚀 Getting Started
+
+1. **Clone the repository:**
    ```bash
-   npm install
-   ```
+   git clone [https://github.com/yourusername/kudikeeper.git](https://github.com/yourusername/kudikeeper.git)
+   Install dependencies:
 
-2. Start the app
+Bash
+npm install
+Run the app:
 
-   ```bash
-   npx expo start
-   ```
+Bash
+npx expo start
+Press w to run the web preview, or scan the QR code with the Expo Go app on your phone.
 
-In the output, you'll find options to open the app in a
+Built with ☕ and sheer willpower.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+### **3. The Final Git Push**
+Now that your repository is protected and documented, run your final commands in the terminal:
 
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-### Other setup steps
-
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```powershell
+git add .
+git commit -m "Initial commit: KudiKeeper v1.0 with Auth, CRUD, Security PIN, and CSV Export"
+git push origin main

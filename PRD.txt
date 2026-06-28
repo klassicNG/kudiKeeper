@@ -1,0 +1,193 @@
+PRODUCT REQUIREMENTS DOCUMENT
+Product Name: KudiKeeper (money keeper)
+
+Objective: Help Nigerians build better financial discipline by making it easy to track daily expenses, understand spending habits, and consistently save money.
+
+Problem Statement
+Many Nigerians especially students, entrepreneurs, and salary earners struggle to save because they:
+Don’t track daily spending
+Spend unnecessarily on airtime, food delivery, transport, subscriptions, etc.
+Cannot easily identify spending leaks
+Have irregular income (especially entrepreneurs)
+Rely on memory or paper records
+Lack localized budgeting tools suited for Nigerian expenses
+
+As a result, they often ask:
+Where did my money go?
+Why can’t I save?
+Why do I run out of money before month-end?
+
+TARGET USERS
+1. Students
+Typical income (to be used as built-in expense categories):
+Allowance from parents, Side hustle income, Scholarships
+
+Common expenses (to be used as built-in expense categories):
+Food, Transport, Data subscription, School fees, Handouts, Social outings
+
+Pain points:
+Poor spending discipline
+Frequent unnecessary purchases
+Little savings habit
+
+2. Entrepreneurs / Small Business Owners
+Typical income (to be used as built-in expense categories):
+Daily sales, Weekly profits, Customer payments
+
+Common expenses (to be used as built-in expense categories):
+Stock purchase, Logistics, Utility bills, Staff wages, Personal withdrawals
+
+Pain points:
+Mixing business and personal expenses
+Poor cash flow visibility
+Difficulty knowing actual profit
+
+3. Salary Earners
+Typical income (to be used as built-in expense categories):
+Monthly salary, Bonuses, Side income
+
+Common expenses (to be used as built-in expense categories):
+Rent, Food, Transport, Family support, Bills, Loans
+
+Pain points:
+Salary finishes too quickly
+Unplanned spending
+Poor budgeting
+
+GOALS
+Business Goals
+Increase financial literacy
+Encourage consistent savings
+Improve budgeting behavior
+Habit-building for users
+
+USER GOALS
+Users want to:
+Track every expense quickly
+Know spending categories
+Reduce unnecessary expenses
+Save toward financial goals
+Receive alerts when overspending
+
+CORE FEATURES
+1. Expense Logging: Users can add expenses in seconds. 
+Input fields: Amount (in naira), Category (in-built), Description, Date, Payment method (in-built)
+Categories: Food, Transport, Airtime/Data, Bills, Shopping, School Business, Family, Entertainment, Savings
+
+2. Income Tracking
+Track all inflows.
+Examples: Salary, Allowance, Sales, Freelance payment, Gift
+
+3. Budget Planner
+Users create monthly or weekly spending limits.
+Example: Food budget = 50,000 per month
+System tracks: Budget used, Budget remaining
+
+4. Savings Goal Tracker
+Users set savings goals
+Examples:
+New laptop, Emergency fund, Rent, School fees
+Fields: Goal name, Target amount, Deadline, Current savings, Priority 
+
+5. Spending Analytics Dashboard
+Visual analytics showing:
+Total income, Total expenses, Savings rate, Largest spending category
+
+6. Smart Alerts / Notifications (optional)
+Examples:
+Budget warning:
+You have spent 85% of your transport budget.
+
+Reminder:
+You haven’t logged today’s expenses.
+Savings encouragement:
+Add 2,500 naira more this week to stay on track.
+
+7. Financial Insights Habit-builder (optional)
+App analyzes habits.
+Examples:
+“You spend most on food delivery.”
+“Transport expenses increased by 30%.”
+“Your spending spikes on weekends.”
+
+8. Multiple banks Support (in-built)
+Users get separate records on each: Cash, Bank, Opay, PalmPay, Moniepoint
+
+FUNCTIONAL REQUIREMENTS
+The system must:
+Allow user registration/login
+Store financial records securely
+Support naira currency formatting
+Generate reports
+Provide filtering by date
+Backup user data
+Export reports to PDF/Excel
+
+NON-FUNCTIONAL REQUIREMENTS
+Expense entry (3 seconds)
+Dashboard loads (5 seconds)
+PIN lock / biometric login
+
+USER FLOW (NEW USER)
+1. Download app
+2. Sign up
+3. Select user type (Student, Entrepreneur, Salary earner)
+4. Set monthly income
+5. Create budget
+6. Start logging expenses
+
+
+
+USER STORIES
+Feature 1: Expense Tracking
+User Story 1
+As a student, I want to record daily expenses so that I know where my allowance goes.
+Acceptance Criteria
+User can input expense amount, User selects category, Expense saves successfully
+
+User Story 2
+As a salary earner, I want to see my weekly expenses so I can control overspending.
+Acceptance Criteria
+Weekly report available, Expenses grouped by category
+
+Feature 2: Budgeting
+User Story 3
+As an entrepreneur, I want to set spending limits so that business expenses stay controlled.
+Acceptance Criteria
+User creates category budgets, App shows remaining balance
+
+User Story 4
+As a user, I want alerts when nearing budget limits so I can reduce spending.
+Acceptance Criteria
+Notification at 80%, Notification at 100%
+
+Feature 3: Savings
+User Story 5
+As a student, I want savings goals so I can save for school fees.
+Acceptance Criteria
+User creates goal, Progress visible
+
+User Story 6
+As a salary earner, I want automated savings recommendations so I save consistently.
+Example: Save 10% of monthly salary.
+
+
+
+Feature 4: Analytics
+User Story 7
+As a user, I want charts and reports so I can understand spending patterns.
+Acceptance Criteria
+Dashboard charts available, Monthly comparison available
+
+Feature 5: Insights
+User Story 8
+As a user, I want smart financial advice so I can improve spending habits.
+Examples: Cut food spending, Increase savings contribution
+
+THE APP CAN BE LAUNCHED WITH THE FOLLOWING FEATURES:
+1. Expense logging
+2. Income tracking
+3. Budgeting
+4. Savings goals
+5. Dashboard analytics
+6. Notifications
