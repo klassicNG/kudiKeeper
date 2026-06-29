@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { View, Text, ScrollView, Platform, TouchableOpacity } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { useStore } from '../store/useStore';
+import * as FileSystem from 'expo-file-system';
+import * as Sharing from 'expo-sharing';
 
 export default function Dashboard() {
     const { balance, income, expenses, transactions, deleteTransaction } = useStore();
@@ -28,30 +30,24 @@ export default function Dashboard() {
     const filteredTransactions = getFilteredTransactions();
 
     // ==========================================
-    // UPGRADED: EXPORT TO EXCEL (CSV) LOGIC
+    // EXPORT TO EXCEL (CSV) LOGIC
     // ==========================================
-    const handleExportCSV = () => {
+    const handleExportCSV = async () => {
         if (transactions.length === 0) {
             return alert("No transactions to export yet!");
         }
 
         const generationDate = new Date().toLocaleDateString();
 
-        // 1. Create a Professional Report Header
         let csvString = "KUDIKEEPER FINANCIAL REPORT\n";
         csvString += `Generated On:,${generationDate}\n\n`;
-
-        // 2. Add an Account Summary Block
         csvString += "--- ACCOUNT SUMMARY ---\n";
         csvString += `Total Balance (NGN):,${balance}\n`;
         csvString += `Total Income (NGN):,${income}\n`;
         csvString += `Total Expenses (NGN):,${expenses}\n\n`;
-
-        // 3. Add the Transaction Table Headers
         csvString += "--- TRANSACTION HISTORY ---\n";
         csvString += "Date,Description,Category,Type,Amount (NGN)\n";
 
-        // 4. Map the data rows
         transactions.forEach(tx => {
             const dateObj = new Date(tx.id);
             const readableDate = dateObj.toLocaleDateString();
@@ -60,7 +56,6 @@ export default function Dashboard() {
             csvString += `${readableDate},"${tx.title}",${tx.category},${typeLabel},${tx.amount}\n`;
         });
 
-        // 5. Download the formatted file
         if (Platform.OS === 'web') {
             const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
             const link = document.createElement("a");
@@ -73,7 +68,22 @@ export default function Dashboard() {
             document.body.removeChild(link);
             alert("✅ Professional report downloaded successfully!");
         } else {
-            alert("Export feature ready! (File System sharing triggers here on native mobile)");
+            try {
+                const fileName = `KudiKeeper_Report_${generationDate.replace(/\//g, '-')}.csv`;
+                const fileUri = FileSystem.documentDirectory + fileName;
+
+                await FileSystem.writeAsStringAsync(fileUri, csvString, {
+                    encoding: FileSystem.EncodingType.UTF8,
+                });
+
+                await Sharing.shareAsync(fileUri, {
+                    mimeType: 'text/csv',
+                    dialogTitle: 'Export Financial Report',
+                    UTI: 'public.comma-separated-values-text'
+                });
+            } catch (error) {
+                alert("Error exporting file on mobile.");
+            }
         }
     };
 
@@ -122,7 +132,6 @@ export default function Dashboard() {
                 <View className="flex-row justify-between items-center mb-4">
                     <Text className="text-white text-lg font-serif font-bold tracking-wide">Recent Activity</Text>
 
-                    {/* THE NEW EXPORT BUTTON */}
                     <TouchableOpacity
                         onPress={handleExportCSV}
                         className="flex-row items-center bg-white/10 px-4 py-2 rounded-full border border-white/20 active:bg-white/20 transition-colors"
@@ -138,8 +147,8 @@ export default function Dashboard() {
                             key={filter}
                             onPress={() => setActiveFilter(filter)}
                             className={`px-4 py-2 rounded-full border transition-colors ${activeFilter === filter
-                                ? 'bg-emerald-500/20 border-emerald-500'
-                                : 'bg-white/5 border-white/10'
+                                    ? 'bg-emerald-500/20 border-emerald-500'
+                                    : 'bg-white/5 border-white/10'
                                 }`}
                         >
                             <Text className={`font-sans text-xs font-bold ${activeFilter === filter ? 'text-emerald-400' : 'text-white/50'}`}>

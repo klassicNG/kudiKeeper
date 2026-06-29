@@ -94,7 +94,11 @@ export default function RootLayout() {
       <View className={`absolute inset-0 ${theme === 'dark' ? 'bg-slate-950/85' : 'bg-emerald-950/70'}`} />
 
       <View
-        className="w-full max-w-[400px] h-full max-h-[850px] rounded-[48px] overflow-hidden relative shadow-2xl"
+        className={
+          Platform.OS === 'web'
+            ? "w-full max-w-[400px] h-full max-h-[850px] rounded-[48px] overflow-hidden relative shadow-2xl"
+            : "flex-1 w-full h-full overflow-hidden relative"
+        }
         style={Platform.OS === 'web' ? { height: '850px', border: '10px solid #0f172a' } : { flex: 1 }}
       >
 
