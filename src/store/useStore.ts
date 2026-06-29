@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
+import AsyncStorage from '@react-native-async-storage/async-storage'; // 1. NEW IMPORT
 
 export const useStore = create(
     persist(
@@ -123,6 +124,7 @@ export const useStore = create(
         }),
         {
             name: 'kudikeeper-storage', // The unique key where your app's data is saved locally
+            storage: createJSONStorage(() => AsyncStorage), // 2. THE CRASH FIX
         }
     )
 );
